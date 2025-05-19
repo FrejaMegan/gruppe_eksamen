@@ -1,0 +1,187 @@
+---
+---
+
+<header>
+  <div class="logo">
+    <!-- Midlertidig placeholder-SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40">
+      <circle cx="50" cy="50" r="40" fill="#abbfa8" />
+    </svg>
+  </div>
+
+  <nav>
+    <!-- Burger -->
+    <div class="burger" role="button" aria-label="Toggle menu">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+
+     <!-- Navigation menu -->
+    <ul class="menu">
+      <li><a href="/">FORSIDE</a></li>
+      <li><a href="/ydelser">YDELSER/PRISER</a></li>
+      <li><a href="/stemmeovelser">STEMMEØVELSER</a></li>
+      <li><a href="/om-mig">OM MIG</a></li>
+      <li><a href="/kontakt">KONTAKT</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  /* Bare lige sørger for at der ikke er rod med margin og padding nogen steder */
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Header er sticky og sidder fast oppe i toppen, så det er let at nå menuen */
+  header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f5ede6;
+    z-index: 100;
+    position: relative; /* Så dropdown-menuen kan placeres korrekt i forhold til header */
+  }
+
+  /* Logo’et får en fast størrelse og rund form, så det ser pænt ud */
+  .logo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Navigationen står på en linje ved siden af logoet */
+  nav {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Menuen er som standard en række links med lidt luft imellem */
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  /* Fjerner den gamle liste-boble */
+  .menu li {
+    list-style: none;
+  }
+
+  /* Linkene har et simpelt, letlæseligt font og lidt polstring, så de ikke føles små */
+  .menu a {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #2d2d2d;
+    padding: 0.5rem;
+    transition: color 0.3s;
+    font-size: 1.4rem;
+  }
+
+  /* Når man bevæger musen over linkene, får de en diskret understregning */
+  .menu a:hover {
+    text-decoration: underline;
+  }
+
+  /*-------------- Burger-menuen er skjult på desktop, men klar til at vise sig på mobil ---------*/
+  .burger {
+    display: none; /* Skjuler burgeren som standard */
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  /* De små streger i burgeren, med lidt afstand og en blød overgang */
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: #333333;
+    margin-bottom: 5px;
+    transition: 0.2s linear;
+  }
+
+  /*--------------- Her starter mobil -----------*/
+  @media (max-width: 800px) {
+    /* Burgeren kommer frem på mobilen */
+    .burger {
+      display: block;
+    }
+
+    /* Menuen er skjult som standard på mobil */
+    .menu {
+      display: none;
+    }
+
+    /* Burgerens streger får kryds-agtig animation når aktiv */
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    }
+
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
+
+    /* Når burger-menuen aktiveres, vises menuen som en dropdown der fylder hele bredden */
+    nav.active .menu {
+      display: block;
+      background-color: #dbe4db;
+      position: absolute;
+      top: 94px;
+      left: 0;
+      width: 100vw; /* Tager hele skærmens bredde */
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000; /* Sørger for at menuen ligger ovenpå */
+    }
+
+    /* Gør der er lidt luft omkring hvert menupunkt i dropdown */
+    nav.active .menu li {
+      margin: 10px 20px;
+    }
+
+    /* Linkene bliver lidt større, så de er nemmere at trykke på */
+    nav.active .menu a {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+
+<script>
+  if (typeof window !== 'undefined') {
+    window.addEventListener("DOMContentLoaded", () => {
+      const burger = document.querySelector(".burger");
+      const nav = document.querySelector("nav");
+      const menu = document.querySelector(".menu");
+
+      if (burger && nav && menu) {
+        // Her toggler vi klasser når burgeren bliver trykket — så menuen kan vises/skjules
+        burger.addEventListener("click", () => {
+          burger.classList.toggle("active");
+          nav.classList.toggle("active");
+        });
+
+        // Hvis man klikker på et menupunkt, så lukker menuen igen
+        menu.addEventListener("click", () => {
+          burger.classList.remove("active");
+          nav.classList.remove("active");
+        });
+      }
+    });
+  }
+</script>
