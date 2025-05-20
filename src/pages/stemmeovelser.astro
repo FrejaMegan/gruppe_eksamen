@@ -1,11 +1,10 @@
 ---
-import Layout from '../layouts/Layout.astro';7
-
+import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Ovelser from '../components/Ovelser.astro';
 import Footer from '../components/Footer.astro';
 
-const apiUrl = "https://qsrakwuccdmdnlksroom.supabase.co";
+const apiUrl = "https://qsrakwuccdmdnlksroom.supabase.co/rest/v1/carina_muller";
 const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFzcmFrd3VjY2RtZG5sa3Nyb29tIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQzNTI4OTEsImV4cCI6MjA1OTkyODg5MX0.qIfMopi9QPFgYQY-eW9K9WdrSVt7vDRFb_ZBN7sZuCU";
 
 // Hent data fra Supabase REST API
@@ -17,11 +16,12 @@ const response = await fetch(apiUrl, {
 });
 
 const events = await response.json();
-
 ---
 
 <Layout>
-	<Header/>
-	<Ovelser/>
-	<Footer/>
+  <Header />
+  <Ovelser events={events} />
+  <Footer />
 </Layout>
+
+
