@@ -63,7 +63,6 @@
   object-fit: cover;       
 }
 
-
   /* Navigationen står på en linje ved siden af logoet */
   nav {
     display: flex;
@@ -93,10 +92,14 @@
     font-size: 1.4rem;
   }
 
-  /* Når man bevæger musen over linkene, får de en diskret understregning */
-  .menu a:hover {
-    text-decoration: underline;
-  }
+  .menu a {
+  display: inline-block;         
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.menu a:hover {
+  transform: translateY(-4px);   /* løfter linket lidt op *//
+}
 
   /*-------------- Burger-menuen er skjult på desktop, men klar til at vise sig på mobil ---------*/
   .burger {
