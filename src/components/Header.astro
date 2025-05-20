@@ -2,11 +2,8 @@
 ---
 
 <header>
-  <div class="logo">
-    <!-- Midlertidig placeholder-SVG -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40">
-      <circle cx="50" cy="50" r="40" fill="#abbfa8" />
-    </svg>
+ <div class="logo">
+    <img src="/logo/logo.svg" alt="Logo" width="40" height="40">
   </div>
 
   <nav>
@@ -44,20 +41,28 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #f5ede6;
+    background-color: #fdf5ed
     z-index: 100;
     position: relative; /* Så dropdown-menuen kan placeres korrekt i forhold til header */
   }
 
   /* Logo’et får en fast størrelse og rund form, så det ser pænt ud */
-  .logo {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.logo {
+  height: 90px;
+  width: 90px;             /* Tilføjer en bredde så den bliver cirkelformet */
+  border-radius: 50%;      /* Gør det rundt */
+  overflow: hidden;        /* Skjuler det der stikker udenfor cirklen */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+}
+
 
   /* Navigationen står på en linje ved siden af logoet */
   nav {
