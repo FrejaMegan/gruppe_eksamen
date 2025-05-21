@@ -1,9 +1,9 @@
 
 <h1 class="titel">Ydelser og Priser</h1>
 
- <div class="grid-1_1">
-    <!-- card -->
-    <div class="card">
+<div class="grid-1_1">
+  <!-- her starter første kort med sang-coaching -->
+  <div class="card">
     <img src="/public/sangundervisning/p1260425.webp" alt="IMG" />
     <h2>COACHING I SANG</h2>
     <p>
@@ -12,7 +12,8 @@
     <div class="price">60 min – 600 KR</div>
     <a href="#" class="btn">BOOK</a>
   </div>
-   <!-- card -->
+  
+  <!-- andet kort: coaching i performance -->
   <div class="card">
     <img src="/public/sangundervisning/p1260321.webp" alt="IMG" />
     <h2>COACHING I PERFORMACE</h2>
@@ -22,9 +23,10 @@
     <div class="price">60 min – 650 KR</div>
     <a href="#" class="btn">BOOK</a>
   </div>
-   <!-- card -->
+  
+  <!-- tredje kort med kropsterapi behandling -->
   <div class="card">
- <img src="/public/behandlinger/p1260208.webp" alt="IMG" />
+    <img src="/public/behandlinger/p1260208.webp" alt="IMG" />
     <h2>KROPSTERAPI BEHANDLING</h2>
     <p>
       En nænsom og dybdegående kropsbehandling, der hjælper dig med at slippe spændinger og skabe forbindelse mellem krop og sind. God til dig, der føler dig stresset, presset eller har svært ved at trække vejret frit.  
@@ -32,9 +34,10 @@
     <div class="price">75 min – 700 KR</div>
     <a href="#" class="btn">BOOK</a>
   </div>
-   <!-- card -->
+  
+  <!-- fjerde kort med undervisning i virksomheder osv -->
   <div class="card">
- <img src="/public/behandlinger/p1260141.webp" alt="IMG" />
+    <img src="/public/behandlinger/p1260141.webp" alt="IMG" />
     <h2>UNDERVISNING I VIRKSOMHEDER, SKOlER OG INSTITUTIONER</h2>
     <p>
       Tilpassede workshops og forløb om stemmebrug, kropssprog og performance – målrettet undervisere, ledere eller kreative faggrupper. Fokus på kommunikation, autenticitet og arbejdsglæde.
@@ -42,47 +45,55 @@
     <div class="price">Kontakt for tilbud – priser fra 1.200 kr/timen</div>
     <a href="/Kontakt" class="btn">BOOK</a>
   </div>
-  </div>
-  </body>
+</div>
+
 
   <style>
-/* Her er mobil  */
+/* her er kortenes udseende på mobil */
 .card {
-  max-width: 400px;
-  margin: 1rem auto;
-  background-color: #dbe4db;
-  border-radius: 20px;
-  padding: 1.8rem;
+  max-width: 400px; 
+  margin: 1rem auto; 
+  background-color: #dbe4db; 
+  border-radius: 20px; 
+  padding: 1.8rem; 
 }
 
+/* billede i kortet - fylder hele bredden */
 .card img {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3; 
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+  object-fit: cover; 
+  border-radius: 4px; 
+  margin-bottom: 1rem; 
 }
 
-
-.titel{
+/* titlen øverst */
+.titel {
   margin-top: 3rem;
   margin-bottom: 5rem;
 }
+
+/* overskrift h1 centreret */
 h1 {
   text-align: center;
-  font-family: ;
 }
+
+/* Overskriften til kortene */
 h2 {
   font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
+
+/* teksten i kortet */
 p {
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 1.5rem;
 }
+
+/* knappernes udseende */
 .btn {
   display: inline-block;
   background-color: #3d8992;
@@ -96,17 +107,19 @@ p {
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
+/* hover effekt på knapperne, den løfter sig lidt */
 .btn:hover {
   transform: translateY(-4px);
   color: #1c1c1c;
 }
 
+/* pris tekst */
 .price {
   font-weight: bold;
   font-size: 1.2rem;
 }
 
-/* Desktop */
+/* grid layout til desktop, 2 kolonner */
 @media screen and (min-width: 800px) {  
   .grid-1_1 {
     display: grid;
@@ -118,7 +131,8 @@ p {
   }
 }
 
- @media (min-width: 600px) {
+/* lidt grid styling fra tablet-størrelse */
+@media (min-width: 600px) {
   .grid-1_1 {
     display: grid;
     grid-template-columns: repeat(2, auto);
