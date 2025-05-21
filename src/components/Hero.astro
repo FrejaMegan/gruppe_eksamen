@@ -1,45 +1,104 @@
-<section class="Hero_section">
-      <h1>Din stemme fortjener ro og styrke</h1>
-      <div>
-       <img src="/public/hero/hero.webp" alt="hero_billede" class="hero_billede">
-      </div>
-      <h3>Velkommen - jeg hedder Carina Müller og jeg hjælper børn, unge og voksne med at finde ro og styrke i stemmen. Både når stemmen driller, spænder op, eller når du ønsker at udvikle dig som sanger Book en uforpligtende samtale - du fortæller, og jeg lytter.</h3>
-      <div>
-        <a href="/src/pages/kontakt.astro" class="gratis_samtale">Gratis samtale</a>
-      </div>
-    </section>
+<section class="hero_section">
+  <h1 class="hero_title">Din stemme fortjener ro og styrke</h1>
+
+  <div class="hero_image_wrapper">
+    <img src="/public/hero/hero.webp" alt="Kvinde der synger" class="hero_billede" />
+
+    <div class="hero_tekst_overlay">
+      <!-- Samme h1 vises her på desktop (kun visuelt) -->
+      <h1 class="hero_title_overlay">Din stemme fortjener ro og styrke</h1>
+
+      <h3>Velkommen – jeg hedder Carina Müller, og jeg hjælper børn, unge og voksne med at finde ro og styrke i stemmen. Både når stemmen driller, spænder op, eller når du ønsker at udvikle dig som sanger. Book en uforpligtende samtale – du fortæller, og jeg lytter.</h3>
+
+      <a href="/kontakt" class="gratis_samtale">Gratis samtale</a>
+    </div>
+  </div>
+</section>
 
     <style>
-.hero_billede{
-     margin: 0px;
-  width: 100%;
-  height: auto;
-}
-h1{
-    text-align: center;
-      
-}
-h3{
-    text-align: left;
-}
-.Hero_section{
-    background-color: #DBE4DB;
-}
-.gratis_samtale{
-     display: inline-block;
-  background-color: #3d8992;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-}
-/* Desktop */
-@media screen and (min-width: 800px) {
-  .grid-1_1 {
-    grid-template-columns: 1fr 1fr;
-    display: grid;
+  /* MOBIL FIRST */
+  .hero_section {
+    background-color: #dbe4db;
+    padding: 1rem;
   }
-}
-    </style>
+
+  .hero_title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero_title_overlay {
+    display: none; /* skjult på mobil */
+  }
+
+  .hero_billede {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero_tekst_overlay {
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .hero_tekst_overlay h3 {
+    font-size: 1rem;
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+
+  .gratis_samtale {
+    display: inline-block;
+    background-color: #3d8992;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    float: left;
+    text-align: left;
+  }
+
+  /* DESKTOP: Tekst som overlay og H1 skjules/flyttes */
+  @media (min-width: 768px) {
+     .hero_section {
+    padding: 0rem;
+  }
+    .hero_title {
+      display: none; /* skjul mobil-h1 */
+    }
+
+    .hero_title_overlay {
+      display: block;
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+      text-align: center;
+      text-align: left;
+    }
+
+    .hero_image_wrapper {
+      position: relative;
+    }
+
+    .hero_tekst_overlay {
+      position: absolute;
+      top: 33px;
+      left: 30%;
+      transform: translate(-50%, -50%);
+      padding: 2rem;
+      max-width: 600px;
+      text-align: center;
+      color: white;
+      border-radius: 1rem;
+    }
+
+    .hero_tekst_overlay h3 {
+      font-size: 1.2rem;
+      color: #fff;
+      text-align: left;
+    }
+  }
