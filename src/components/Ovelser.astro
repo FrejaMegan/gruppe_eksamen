@@ -3,16 +3,21 @@
 const { events } = Astro.props;
 ---
 
+<!-- Sektion med titel og introduktion -->
 <section class="stemmeovelser">
-    <h1 class="title">Stemmeøvelser</h1>
-    <p>Her finder du seks små øvelser, der bygger videre på hinanden – trin for trin. Du kan tage ét ad gangen, i dit eget tempo. Hver øvelse guider dig nænsomt tættere på en friere, stærkere stemme.Start ved trin 1 og mærk, hvordan krop, åndedræt og stemme arbejder sammen.</p>
+  <h1 class="title">Stemmeøvelser</h1>
+  <p>
+    Her finder du seks små øvelser, der bygger videre på hinanden – trin for trin.
+    Du kan tage ét ad gangen, i dit eget tempo. Hver øvelse guider dig nænsomt tættere på en friere, stærkere stemme.
+    Start ved trin 1 og mærk, hvordan krop, åndedræt og stemme arbejder sammen.
+  </p>
 </section>
 
-
+<!-- Her looper vi igennem hver øvelse og viser dem -->
 <section class="ovelser">
   {events.map((events) => (
     <article class="ovelse">
-      <h2>{events.step} {events.navn}</h2>
+      {/* Videoen bliver vist her - embed i stedet for 'watch?v=' */}
       <iframe
         width="100%"
         height="200"
@@ -20,71 +25,95 @@ const { events } = Astro.props;
         title={events.navn}
         allowfullscreen
       ></iframe>
-      
+
+      {/* Her står "STEP X" og navnet på øvelsen under videoen */}
+      <div class="tekst-wrapper">
+        <p class="step-label">STEP {events.step}</p>
+        <h2 class="ovelse-titel">{events.navn}</h2>
+      </div>
     </article>
   ))}
 </section>
 
-
 <style>
+  /* Første sektion med overskrift + introtekst */
+  .stemmeovelser {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
 
-    .stemmeovelser {
-        max-width: 600px;
-        margin: 0 auto;
-        padding: 20px;
+  /* Stil til selve titlen */
+  .title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+  }
+
+  /* Styling af teksten under overskriften */
+  p {
+    align-items: center;
+  }
+
+  /* Grid-layout til øvelserne – starter som én kolonne */
+  .ovelser {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Styling af hver enkelt øvelse-boks */
+  .ovelse {
+    background-color: #d4dfda;
+    padding: 1rem;
+    border-radius: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Wrapper til tekst under video */
+  .tekst-wrapper {
+    margin-top: 1rem;
+  }
+
+  /* "STEP X"-tekst */
+  .step-label {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Navnet på øvelsen */
+  .ovelse-titel {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-transform: none;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* Når skærmen er min. 600px – vis 2 kolonner */
+  @media (min-width: 600px) {
+    .ovelser {
+      grid-template-columns: 1fr 1fr;
     }
-.title {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  font-family: "Bebas Neue", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-}
-
-p {
-  align-items: center;
-
-}
-.ovelser {
-  display: grid;
-  grid-template-columns: 1fr; 
-  gap: 2rem;
-  padding: 3rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.ovelse {
-  background-color: #d4dfda; 
-  padding: 1rem;
-  border-radius: 12px;
-  box-sizing: border-box;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.ovelse h2 {
-  font-family: 'Oswald', sans-serif; 
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1rem;
-  margin-top: 1rem;
-  line-height: 1.2;
-}
-
-
-@media (min-width: 600px) {
-  .ovelser {
-    grid-template-columns: 1fr 1fr;
   }
-}
 
-
-@media (min-width: 900px) {
-  .ovelser {
-    max-width: 800px;
+  /* Max-width begrænsning på større skærme */
+  @media (min-width: 900px) {
+    .ovelser {
+      max-width: 800px;
+    }
   }
-}
 </style>
 
 
