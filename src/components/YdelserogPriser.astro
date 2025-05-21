@@ -1,4 +1,6 @@
- 
+
+<h1 class="titel">Ydelser og Priser</h1>
+
  <div class="grid-1_1">
     <!-- card -->
     <div class="card">
@@ -15,7 +17,7 @@
     <img src="/public/sangundervisning/p1260321.webp" alt="IMG" />
     <h2>COACHING I PERFORMACE</h2>
     <p>
-      Få redskaber til at stå stærkere på scenen – med nærvær, kontakt og autenticitet. Vi arbejder med krop, vejrtrækning og mental forberedelse, så du kan performe med ro og gennemslagskraft.
+      Få redskaber til at stå stærkere på scenen – med nærvær, kontakt og autenticitet. Vi arbejder med krop, vejrtrækning og mental forberedelse, så du kan performe med ro.
     </p>
     <div class="price">60 min – 650 KR</div>
     <a href="#" class="btn">BOOK</a>
@@ -47,18 +49,23 @@
 /* Her er mobil  */
 .card {
   max-width: 400px;
-  margin: 2rem auto;
+  margin: 1rem auto;
   background-color: #dbe4db;
   border-radius: 20px;
-  padding: 1.5rem;
+  padding: 1.8rem;
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 300px;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 1rem;
+}
+
+.titel{
+  margin-top: 3rem;
+  margin-bottom: 5rem;
 }
 h1 {
   text-align: center;
@@ -82,7 +89,8 @@ p {
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1.8rem;
 }
 .price {
   font-weight: bold;
@@ -90,10 +98,27 @@ p {
 }
 
 /* Desktop */
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px) {  
   .grid-1_1 {
-    grid-template-columns: 1fr 1fr;
     display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 5rem; 
+    row-gap: 3rem; 
+    justify-content: center;
+    align-items: start;
   }
 }
+
+ @media (min-width: 600px) {
+  .grid-1_1 {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    column-gap: 3rem; 
+    row-gap: 3rem;     
+    justify-content: center;
+    align-items: start;
+    padding: 0 2rem; 
+  }
+}
+
   </style>
