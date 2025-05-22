@@ -1,0 +1,107 @@
+---
+---
+
+<section class="contact-form">
+    <div class="image-side">
+      <img src="public/portrætter/P1260067.webp" alt="Carina Müller" />
+    </div>
+    <div class="form-side">
+      <h2>Lad os tage en uforpligtende snak?</h2>
+      <p>Udfyld formlen nedenunder og jeg vil kontakte dig!</p>
+      <form>
+        <input type="text" placeholder="Fornavn" required />
+        <input type="text" placeholder="Efternavn" required />
+        <input type="email" placeholder="Mail" required />
+        <input type="tel" placeholder="Telefonnummer" />
+        <textarea placeholder="Besked..."></textarea>
+        <button type="submit">KONTAKT MIG</button>
+      </form>
+    </div>
+  </section>
+
+  
+<!-- Kontaktformular mobilefirst --> 
+  <style>
+    @media (max-width: 768px){
+    .contact-form {
+   display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem;
+  background: #e1ede3;
+  border-radius: 10px;
+  gap: 1.5rem; 
+  flex-direction: column;
+  
+}
+}
+
+.contact-form img {
+   max-width: 100%;
+  border-radius: 10px; 
+  
+  
+}
+
+.contact-form form input,
+.contact-form form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.contact-form form button {
+  /* background-color: #5ca6a6;
+  border: none;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer; */
+   display: inline-block; 
+  background-color: #3d8992;
+  color: white;
+  padding: 0.75rem 1.5rem; 
+  border-radius: 20px; 
+  text-decoration: none;
+  font-weight: bold;
+   margin-bottom: 1.5rem; 
+}
+  </style>
+
+<!-- Desktop -->
+<style>
+@media screen and (min-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    /* justify-content: center; */
+  }
+
+  .contact-form {
+    /* flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem; */
+    display: flex;
+  flex-direction: row; /* standard */
+  align-items: flex-start;
+  gap: 2rem;
+  background: #e1ede3;
+    
+  }
+
+  .contact-form .image-side {
+    flex: 1;
+    max-width: 40%;
+  }
+
+  .contact-form .form-side {
+    flex: 1;
+    max-width: 55%;
+  }
+}
+    </style>
+
+
+
+
