@@ -1,7 +1,23 @@
 ---
 // EventList.astro
 const { events } = Astro.props;
+
+// Funktion til at konvertere YouTube-links til embed-format med starttid
+function getEmbedUrl(youtubeUrl) {
+  const url = new URL(youtubeUrl);
+  const videoId = url.searchParams.get("v");
+  const time = url.searchParams.get("t");
+
+  let embedUrl = `https://www.youtube.com/embed/${videoId}`;
+  if (time) {
+    const seconds = parseInt(time.replace("s", ""));
+    embedUrl += `?start=${seconds}`;
+  }
+
+  return embedUrl;
+}
 ---
+
 
 <!-- Sektion med titel og introduktion -->
 <section class="stemmeovelser">
@@ -21,10 +37,12 @@ const { events } = Astro.props;
       <iframe
         width="100%"
         height="300"
-        src={events.video.replace("watch?v=", "embed/")}
+        src={getEmbedUrl(events.video)}
         title={events.navn}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
-      ></iframe>
+></iframe>
+
 
       {/* Her står "STEP X" og navnet på øvelsen under videoen */}
       <div class="tekst-wrapper">
