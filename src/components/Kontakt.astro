@@ -1,0 +1,63 @@
+<section class="kontakt">
+  <div class="tekst">
+    <h1>Har du spørgsmål, eller vil du høre mere?</h1>
+    <a href="/kontakt" class="button">Lad os tage en snak</a>
+  </div>
+  <div class="billede">
+    <img src="/portrætter/portræt.webp" alt="portræt" />
+  </div>
+</section>
+
+<style>
+a {
+  display: inline-block;
+  background-color: #3d8992;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+}
+a:hover {
+  transform: translateY(-6px);
+}
+
+.kontakt {
+  background: #e1ede3;
+  padding: 4rem 22vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.kontakt .billede {
+  width: 50%;
+  text-align: right; 
+}
+
+.billede img {
+  max-width: 100%;
+  height: auto;
+}
+
+.kontakt h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+@media (max-width: 768px) {
+  .kontakt {
+    flex-direction: column;
+    text-align: center;
+  }
+  .kontakt .billede {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+</style>

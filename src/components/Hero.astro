@@ -16,89 +16,106 @@
 </section>
 
     <style>
-  /* MOBIL FIRST */
+ /* MOBIL*/
+.hero_section {
+  background-color: #dbe4db;
+  padding: 1rem;
+}
+
+.hero_title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero_title_overlay {
+  display: none;
+}
+
+.hero_billede {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero_tekst_overlay {
+  padding: 1rem;
+  text-align: left;
+}
+
+.hero_tekst_overlay h3 {
+  font-size: 1rem;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.gratis_samtale {
+  display: inline-block;
+  background-color: #3d8992;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: left;
+  transition: transform 0.2s ease;
+}
+  .gratis_samtale:hover {
+    transform: translateY(-6px); /* Løfter logoet let ved hover */
+  }
+
+/* TABLET + DESKTOP */
+@media (min-width: 950px) {
   .hero_section {
-    background-color: #dbe4db;
-    padding: 1rem;
+    padding: 0;
   }
 
   .hero_title {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    display: none; 
   }
 
   .hero_title_overlay {
-    display: none; /* skjult på mobil */
+    display: block;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: left;
   }
 
-  .hero_billede {
-    width: 100%;
-    height: auto;
-    display: block;
+  .hero_image_wrapper {
+    position: relative;
   }
 
   .hero_tekst_overlay {
-    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    padding: 2rem;
+    max-width: 600px;
     text-align: left;
+    color: white;
+    border-radius: 1rem;
   }
 
   .hero_tekst_overlay h3 {
-    font-size: 1rem;
-    margin: 1rem 0;
-    line-height: 1.6;
+    font-size: 1.2rem;
+    color: #fff;
+  }
+}
+
+/* STOR DESKTOP */
+@media (min-width: 1200px) {
+  .hero_tekst_overlay {
+    left: 15%;
+    max-width: 650px;
+    padding: 3rem;
   }
 
-  .gratis_samtale {
-    display: inline-block;
-    background-color: #3d8992;
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 1rem;
-    float: left;
-    text-align: left;
+  .hero_title_overlay {
+    font-size: 3rem;
   }
+}
 
-  /* DESKTOP: Tekst som overlay og H1 skjules/flyttes */
-  @media (min-width: 768px) {
-     .hero_section {
-    padding: 0rem;
-  }
-    .hero_title {
-      display: none; /* skjul mobil-h1 */
-    }
-
-    .hero_title_overlay {
-      display: block;
-      font-size: 2.5rem;
-      color: #fff;
-      margin-bottom: 1rem;
-      text-align: center;
-      text-align: left;
-    }
-
-    .hero_image_wrapper {
-      position: relative;
-    }
-
-    .hero_tekst_overlay {
-      position: absolute;
-      top: 34%;
-      left: 30%;
-      transform: translate(-50%, -50%);
-      padding: 2rem;
-      max-width: 600px;
-      text-align: center;
-      color: white;
-      border-radius: 1rem;
-    }
-
-    .hero_tekst_overlay h3 {
-      font-size: 1.2rem;
-      color: #fff;
-      text-align: left;
-    }
-  }
+ </style>
