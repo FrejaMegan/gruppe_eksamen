@@ -73,11 +73,12 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding-inline: 2rem; /* Mindre padding for mobil */
+  padding-inline: 0 2rem; 
   text-align: left;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  box-sizing: border-box;
 }
 
 
@@ -85,21 +86,27 @@ footer {
   display: flex;
   flex-direction: column;
 }
+/* Sætter box-sizing til border-box for alle elementer og deres pseudo-elementer, 
+  så padding og border tælles med i elementets samlede bredde og højde. Hvis den ikke har det forsvinder
+  footer boom ud i højre side*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 .footer_bottom {
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 2rem;
   background-color: #93A88F;
   font-size: 0.875rem;
   color: #000;
-  margin-top: 2rem;
-
-  max-width: 1500px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  padding-inline: 2rem;
+  margin: 2rem auto 0;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
+
+
 
 
 h3 {
@@ -196,5 +203,7 @@ h2 {
     font-size: 1.1rem;
   }
 }
+
+
 
   </style>
