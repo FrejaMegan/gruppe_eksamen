@@ -38,61 +38,42 @@
     </div>
     </div>
 <style>
-  .grid-container {
-  grid-template-columns: 1fr;
+.grid-container {
   display: grid;
-  gap: 1rem;
-  padding: 7.1rem;
+  grid-template-columns: 1fr;
+  gap: 2rem; 
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.Aktuelle_aktiviteter {
-  
-  
+
+.grid-container > div {
   background-color: #dbe4db;
   border-radius: 20px;
   padding: 1.5rem;
 }
 
-.Sangscoach_opgaver {
-  
-  
-  background-color: #dbe4db;
-  border-radius: 20px;
-  padding: 1.5rem;
+
+.Referencer {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+  font-size: 2rem;
 }
 
-.Undervisning {
-  
-  
-  background-color: #dbe4db;
-  border-radius: 20px;
-  padding: 1.5rem;
+/* Responsiv layout til 2 kolonner */
+@media screen and (min-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.Musikpædagogisk_arbejde {
-  
-  
-  background-color: #dbe4db;
-  border-radius: 20px;
-  padding: 1.5rem;
-}
-h1{
-    text-align: left;
-    /* padding-left: 49px; */
-    font-size: 2rem;
-   
-}
-.Referencer{
-    margin-bottom: 60px;
-    font-size: 2rem;
-}
+
 /* Desktop */
 @media screen and (min-width: 800px) {
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 0.5fr 1fr 1fr;
-    
-    
   }
   .Referencer {
     grid-column: 1 / 3;
