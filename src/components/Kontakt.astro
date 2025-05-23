@@ -1,7 +1,7 @@
 <section class="kontakt">
   <div class="tekst">
     <h1>Har du spørgsmål, eller vil du høre mere?</h1>
-    <a href="/kontakt" class="button">Lad os tage en snak</a>
+    <a href="#" class="button">Lad os tage en snak</a>
   </div>
   <div class="billede">
     <img src="/portrætter/portræt.webp" alt="portræt" />
@@ -9,20 +9,22 @@
 </section>
 
 <style>
-a {
+.button {
   display: inline-block;
   background-color: #3d8992;
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border-radius: 20px;
   text-decoration: none;
   font-weight: bold;
-  margin-bottom: 1.5rem;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
 }
-a:hover {
+
+.button:hover {
   transform: translateY(-6px);
 }
+
 
 .kontakt {
   background: #e1ede3;
@@ -58,6 +60,6 @@ a:hover {
     width: 100%;
     text-align: center;
   }
-
 }
 </style>
+
