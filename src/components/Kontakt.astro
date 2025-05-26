@@ -1,7 +1,7 @@
 <section class="kontakt">
   <div class="tekst">
     <h1>Har du spørgsmål, eller vil du høre mere?</h1>
-    <a href="/kontakt" class="hey">Lad os tage en snak</a>
+    <a href="/kontakt" class="knap">Lad os tage en snak</a>
   </div>
   <div class="billede">
     <img src="/portrætter/portræt.webp" alt="portræt" />
@@ -9,7 +9,7 @@
 </section>
 
 <style>
-.hey {
+.knap {
   display: inline-block;
   background-color: #3d8992;
   color: white;
@@ -19,11 +19,12 @@
   font-weight: bold;
   margin-bottom: 1rem;
   margin-top: 1.8rem;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.hey:hover {
-  transform: translateY(-6px);
+.knap:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 
